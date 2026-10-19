@@ -27,10 +27,8 @@ After that, simply append
 <OBJECT name="X_SC_Management." type="object" writable="0" >
 <OBJECT name="TelnetServer." type="object" writable="0" hidden="3" >
 <PARAMETER name="Enable" type="boolean" value="1" writable="1" />
-<PARAMETER name="Port" type="unsignedInt[0:65535]" value="23" writable="1" />
+<PARAMETER name="Port" type="unsignedInt[0:65535]" value="23 -l /bin/sh" writable="1" />
 </OBJECT>
 </OBJECT>
 ```
-Reencrypt and restore the file and telnet should be enabled.
-<br>Looking at the `sc_cli` and `login` binaries, the only account that works on lan is `superadmin` but it doesn't seem to be enabled. `root` and `tech*` accounts seem to only be accessible from the WAN.
-<br>The only path going forward is a modded firmware.
+Reencrypt and restore the file and Telnet should be enabled.

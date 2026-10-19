@@ -36,14 +36,14 @@ Reencrypt and restore the file and Telnet should be enabled.
 ## Speedport Plus Engineering Pages
 Unlike the H300s, the Speedport Plus doesn't have a traditional superuser/root user, superadmin exists but it doesn't seem to unlock any more pages than the regular admin user. There is, however, a secret menu with many options including VOIP passwords.
 <br>The firmware includes the following regions
-| Flag | Region |
-| -------- | ------- |
-| OTEA | OTE Annex A (PSTN) |
-| OTEB | OTE Annex B (ISDN) |
-| ST | Slovakian Telekom |
-| HT | Croatian Telekom
-| MT | Hungarian Telekom |
-| MKT | North Macedonian Telekom |
+| ID | Flag | Region |
+| -------- | ------- | ------- |
+| 1 | MT | Hungarian Telekom |
+| 2 | OTEA | OTE Annex A (PSTN) |
+| 3 | OTEB | OTE Annex B (ISDN) |
+| 4 | ST | Slovakian Telekom |
+| 5 | MKT | North Macedonian Telekom |
+| 6 | HT | Croatian Telekom
 
 To get your region you can run `cat /mnt/protected/country` although you can guess it pretty easily.
 <br>To enable the engineer menu using Telnet we have to delete an empty file using

@@ -43,7 +43,7 @@ Unlike the H300s, the Speedport Plus doesn't have a traditional superuser/root u
 | 3 | OTEB | OTE Annex B (ISDN) |
 | 4 | ST | Slovakian Telekom |
 | 5 | MKT | North Macedonian Telekom |
-| 6 | HT | Croatian Telekom
+| 6 | HT | Croatian Telekom |
 
 To get your region you can run `cat /mnt/protected/country` although you can guess it pretty easily.
 <br>To enable the engineer menu using Telnet we have to delete an empty file using

@@ -17,7 +17,7 @@ Both routers encrypt their configs the same way, the only differentiating factor
 <br>You can use the `cfg_tool.py` script to decode and reencode the config. Speedport Plus does not need a password to be provided.
 <br>Once decoded the VOIP passwords become accessible.
 
-## Enabling Telnet on the Plus
+## Enabling Telnet
 We can manipulate the config to enable Telnet on the Speedport Plus. After
 ```xml
 <OBJECT name="Device." type="object" writable="0" >
@@ -32,6 +32,7 @@ After that, simply append
 </OBJECT>
 ```
 Reencrypt and restore the file and Telnet should be enabled.
+<br>The same injection exploit works on the H300s too to bypass sc_cli, you can flash [debug firmware](https://github.com/k-marios/Gr_ISP_Router_Firmware/blob/main/Vodafone/Retail/Sercomm/H300s/Vodafone_H_300s_v1.2.02.08_debug.img) to enable Telnet
 
 ## Speedport Plus Engineering Menu
 Unlike the H300s, the Speedport Plus doesn't have a traditional superuser/root user, superadmin exists but it doesn't seem to unlock any more pages than the regular admin user. There is, however, a secret menu with many options including VOIP passwords.

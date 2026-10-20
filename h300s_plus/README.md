@@ -33,9 +33,16 @@ After that, simply append
 ```
 Reencrypt and restore the file and Telnet should be enabled.
 
-## Speedport Plus Engineering Pages
+## Speedport Plus Engineering Menu
 Unlike the H300s, the Speedport Plus doesn't have a traditional superuser/root user, superadmin exists but it doesn't seem to unlock any more pages than the regular admin user. There is, however, a secret menu with many options including VOIP passwords.
-<br>The firmware includes the following regions
+<br>To enable the engineer menu using Telnet we have to delete an empty file using
+```
+rm /tmp/hiddenpageRO
+```
+Then login to your router which now has the Telekom brand and a different set of pages) and after logging in navigate to http://192.168.1.1/html/engineer/ghome.htm
+
+## Change Web Interface Region
+The firmware includes the following regions
 | ID | Flag | Region |
 | -------- | ------- | ------- |
 | 1 | MT | Hungarian Telekom |
@@ -45,17 +52,14 @@ Unlike the H300s, the Speedport Plus doesn't have a traditional superuser/root u
 | 5 | MKT | North Macedonian Telekom |
 | 6 | HT | Croatian Telekom |
 
-To get your region you can run `cat /mnt/protected/country` although you can guess it pretty easily.
-<br>To enable the engineer menu using Telnet we have to delete an empty file using
-```
-rm /tmp/hiddenpageRO
-```
-Then remove the flag, for example
+Each region has differences pertaining to which pages are shown to the user, some of those are client sided.
+<br>To get your region you can run `cat /mnt/protected/country` although you can guess it pretty easily.
+<br>To change region remove the flag, for example
 ```
 rm /var/.OTEA
 ```
-And create the Slovakian flag using
+And create the Slovakian (or any other) flag using
 ```
 touch /var/.ST
 ```
-Then login to your router which now has the Telekom brand and a different set of pages) and after logging in navigate to http://192.168.1.1/html/engineer/ghome.htm
+The Web UI should now be magenta themed

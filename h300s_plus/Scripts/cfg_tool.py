@@ -141,7 +141,7 @@ def cmd_encode(password=None):
     hex_text = ct_inner.hex().upper()
 
     if variant == 1:
-        out_path = ENCODED_DIR / "config.hex"
+        out_path = ENCODED_DIR / "H300s_Mod.config"
         out_path.write_text(hex_text, encoding="ascii")
         return
 

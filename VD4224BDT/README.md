@@ -9,9 +9,7 @@ The Arcadyan version reads a secret from NVRAM which I couldn't determine withou
 <br>The Sercomm version asks the user for a password and then outputs a file called `configurationBackup.cfg` that is internally referred to as `VD4224BDT_Config.cfg` and starts with `Salted__`
 <br>We can decrypt it pretty easily using OpenSSL. I used `12345678` as the password for this example
 ```sh
-openssl enc -d -aes256 -pass pass:12345678 \
-  -in VD4224BDT_Config.cfg \
-  -out VD4224BDT_Config.tgz
+openssl enc -d -aes256 -pass pass:12345678 -in configurationBackup.cfg -out VD4224BDT_Config.tgz
 ```
 Once we decrypt it we can decompress it using `tar` like so
 ```

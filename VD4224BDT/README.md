@@ -27,3 +27,5 @@ First of all we must get a config file and decrypt/decompress it using the instr
 <br>After the router finishes booting, download the `busybox` binary from [here](https://busybox.net/downloads/binaries/1.21.1/busybox-armv7l) and using a TFTP client like `tftp-hpa` push the binary using `tftp -m binary 192.168.1.1 -c put busybox busybox`
 <br>Once the binary has uploaded successfully repeat the configuration steps two times, first restore a config with `upnp_igd_enabled='; chmod +x /data/busybox; #` to make the binary executable and then with `upnp_igd_enabled='; /data/busybox telnetd -l /bin/sh -p 2323; #` to make the telnet daemon run at boot.
 <br>Once that is finished, you should be able to get root shell using `telnet 192.168.1.1 2323`.
+<br>
+<br>Warning: This bypasses the firewall so it's open on WAN too. It's recommended that you turn it off once you are finished if the router is public facing.
